@@ -52,3 +52,5 @@ tail_pid=$!
 
 trap "kill $ngrok_pid $main_pid $sync_pid $tail_pid" SIGTERM
 trap "kill -9 $ngrok_pid $main_pid $sync_pid $tail_pid; exit" SIGKILL
+
+read -p "Server Running?"
