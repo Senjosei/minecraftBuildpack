@@ -1,35 +1,18 @@
 {
-  "name": "Minecraft",
-  "description": "A Minecraft Server on Heroku",
+  "name": "Minecraft Forge",
+  "description": "A Minecraft Forge Server on Heroku",
   "keywords": [
     "games",
     "minecraft"
   ],
-  "repository": "https://github.com/gamer4life1/minecraftBuildpack",
   "env": {
-    "MINECRAFT_EULA": {
-      "description": "Do you accept the Minecraft EULA?",
-      "value": "true"
-    },
     "NGROK_API_TOKEN": {
       "description": "Your personal ngrok API token",
       "required": true
     },
     "DROPBOX_ACCESS_TOKEN": {
       "description": "The dropbox access token for syncing",
-      "required": false
-    },
-    "AWS_BUCKET": {
-      "description": "S3 Bucket to store your server state (you will lose your games when the server restarts if you don't do this)",
-      "required": false
-    },
-    "AWS_ACCESS_KEY": {
-      "description": "The AWS access key for the S3 Bucket",
-      "required": false
-    },
-    "AWS_SECRET_KEY": {
-      "description": "The AWS secret key for the S3 Bucket",
-      "required": false
+      "required": true
     }
   },
   "buildpacks": [
