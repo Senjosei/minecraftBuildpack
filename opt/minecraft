@@ -4,9 +4,9 @@ mc_port=25566
 port=${1:-${PORT:-8080}}
 
 # Start the TCP tunnel
-ngrok_cmd="chisel server --port $PORT --proxy http://example.com"
+ngrok_cmd="screen -L -h 2048 -dmS proxy chisel server --port $PORT --proxy http://example.com"
 echo "Starting chisel..."
-eval "$ngrok_cmd  &"
+eval "$ngrok_cmd &"
 ngrok_pid=$!
 
 # create server config
