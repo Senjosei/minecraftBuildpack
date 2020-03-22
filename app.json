@@ -6,10 +6,6 @@
     "minecraft"
   ],
   "env": {
-    "NGROK_API_TOKEN": {
-      "description": "Your personal ngrok API token",
-      "required": true
-    },
     "DROPBOX_ACCESS_TOKEN": {
       "description": "The dropbox access token for syncing",
       "required": true
