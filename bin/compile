@@ -55,6 +55,8 @@ for DEB in $(ls -1 $APT_CACHE_DIR/archives/*.deb); do
   dpkg -x $DEB $BUILD_DIR/.apt/
 done
 
+mkdir -p $BUILD_DIR/bin
+
 echo -n "-----> Installing chisel... "
 curl --silent -o chisel.gz -L "https://github.com/jpillora/chisel/releases/download/1.3.1/chisel_linux_amd64.gz" | indent
 gzip -d chisel.gz 
@@ -66,7 +68,6 @@ curl --silent -o dropbox_uploader.sh -L "https://raw.githubusercontent.com/andre
 mv dropbox_uploader.sh $BUILD_DIR/bin
 echo "done"
 
-mkdir -p $BUILD_DIR/bin
 [ ! -f $BUILD_DIR/minecraft ]   && cp $OPT_DIR/minecraft $BUILD_DIR/bin
 [ ! -f $BUILD_DIR/sync ]        && cp $OPT_DIR/sync $BUILD_DIR/bin
 [ ! -f $BUILD_DIR/index.rhtml ] && cp $OPT_DIR/index.rhtml $BUILD_DIR
